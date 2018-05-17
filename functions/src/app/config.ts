@@ -27,7 +27,7 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
 //// Service account required for Stripe Connect OAuth
-const serviceAccount = require('../../stripeafbCredentials.json')
+const serviceAccount = require('../../credentials.json')
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
