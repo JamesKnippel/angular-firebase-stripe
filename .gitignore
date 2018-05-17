@@ -4,6 +4,7 @@ functions/node_modules
 functions/lib
 functions/credentials.json
 functions/src/credentials.json
+functions/stripeafbCredentials.json
 NOTES.md
 
 /src/env.ts
@@ -49,3 +50,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+functions/stripeafbCredentials.json
+functions/stripeafbCredentials.json

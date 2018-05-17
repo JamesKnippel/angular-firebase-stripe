@@ -27,11 +27,11 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
 //// Service account required for Stripe Connect OAuth
-const serviceAccount = require('../../credentials.json')
+const serviceAccount = require('../../stripeafbCredentials.json')
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://stripe-elements.firebaseio.com"
+    databaseURL: "https://stripedemo-afb.firebaseio.com"
 });
 
  
@@ -47,14 +47,14 @@ export const auth   = admin.auth();
 import * as Stripe from 'stripe'; 
 
 // Possible bug with v1.0 and firebase-tools CLI
-// export const stripeSecret       = functions.config().stripe.secret;
-// export const stripePublishable  = functions.config().stripe.publishable;
-// export const stripeClientId     = functions.config().stripe.clientid; // only used for stripe connect
+export const stripeSecret       = functions.config().stripe.secret;
+export const stripePublishable  = functions.config().stripe.publishable;
+export const stripeClientId     = functions.config().stripe.clientid; // only used for stripe connect
 
 
-export const stripeSecret       = serviceAccount.stripe.secret;
-export const stripePublishable  = serviceAccount.stripe.publishable;
-export const stripeClientId     = serviceAccount.stripe.clientid; 
+// export const stripeSecret       = serviceAccount.stripe.secret;
+// export const stripePublishable  = serviceAccount.stripe.publishable;
+// export const stripeClientId     = serviceAccount.stripe.clientid; 
 
 export const stripe = new Stripe(stripeSecret);
 

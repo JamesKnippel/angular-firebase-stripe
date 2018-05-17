@@ -6,18 +6,18 @@
 export const environment = {
 
   production: false,
-  firebase: {
-    apiKey: '<project>',
-    authDomain: '<project>.firebaseapp.com',
-    databaseURL: 'https://<project>.firebaseio.com',
-    projectId: '<project>',
-    storageBucket: '<project>.appspot.com',
-    messagingSenderId: '<project>'
+  firebaseConfig: {
+    apiKey: 'AIzaSyCuyTbFw7EPQqxAVBtscjPvmi-6nkaZDQE',
+    authDomain: 'stripedemo-afb.firebaseapp.com',
+    databaseURL: 'https://stripedemo-afb.firebaseio.com',
+    projectId: 'stripedemo-afb',
+    storageBucket: 'stripedemo-afb.appspot.com',
+    messagingSenderId: '792252701079'
   },
 
   // http://localhost:5000
-  functionsURL: ' http://localhost:5000/stripe-elements/us-central1',
-  // functionsURL: 'https://us-central1-stripe-elements.cloudfunctions.net',
+  // functionsURL: ' http://localhost:5000/stripe-elements/us-central1',
+  functionsURL: 'https://us-central1-stripedemo-afb.cloudfunctions.net',
   
   stripePublishable: 'pk_test_m3a5moXVKgThpdfwzKILvnbG'
 

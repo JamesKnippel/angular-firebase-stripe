@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PaymentService } from '../payment.service';
 import { switchMap, tap, map } from 'rxjs/operators';
 import { AuthService } from '../../core/auth.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'subscription-plan',
@@ -20,7 +20,7 @@ export class SubscriptionPlanComponent implements OnInit {
   constructor(public pmt: PaymentService, public auth: AuthService) { }
 
   ngOnInit() {
-    this.subscriptions$ = this.auth.user.map( user => user.subscriptions || {} )
+    this.subscriptions$ = this.auth.user.pipe(map(user => user.subscriptions || {}));
   }
 
   createHandler() {

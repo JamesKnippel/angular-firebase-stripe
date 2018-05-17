@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
-import * as firebase from 'firebase/app';
+import * as firebase from '@firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable ,  from as fromPromise, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { fromPromise } from 'rxjs/observable/fromPromise';
 
 import { User } from './user';
 
@@ -26,7 +25,7 @@ export class AuthService {
           if (user) {
             return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
           } else {
-            return Observable.of(null)
+            return of(null)
           }
         })
       )
